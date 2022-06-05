@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-    insert into movies (title,genre,director,year,storyline,created_at,updated_at) values ('Batman','Action','Cristopher Nollan',2015,'Masked vigilante in Gotham City',now(),now());
+   
 
     /**
      * Reverse the migrations.
