@@ -1,36 +1,38 @@
 @extends('layouts.app')
 @section('content')
 
-
-<form method="POST" action="">
-
- <div class="form-group">
-  <label for="exampleInputTitle1">Title</label>
-  <input type="text" class="form-control" id="exampleInputTitle1" aria-describedby="titleHelp" placeholder="Enter title">
-  <small id="titleHelp" class="form-text text-muted"></small>
-</div>
-
-<div class="form-group">
- <label for="exampleInputGenre">Genre</label>
- <input type="text" class="form-control" id="exampleInputGenre" aria-describedby="genreHelp" placeholder="Enter genre">
- <small id="genreHelp" class="form-text text-muted"></small>
-</div>
-
-<div class="form-group">
- <label for="exampleInputDirector1">Director</label>
- <input type="text" class="form-control" id="exampleInputDirector1" aria-describedby="directorHelp" placeholder="Enter director">
- <small id="directorHelp" class="form-text text-muted"></small>
-</div>
-
-<div class="form-group">
- <label for="exampleInputYear1">Year</label>
- <input type="text" class="form-control" id="exampleInputYear1" aria-describedby="yearHelp" placeholder="Enter year">
- <small id="yearHelp" class="form-text text-muted"></small>
-</div>
+<h1>Create a movie</h1>
+<form method="POST" action="/create">
+  @csrf
 
  <div class="form-group">
-  <label for="exampleFormControlTextarea1">Example textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <label for="title">Title</label>
+  <input type="text" name="title" class="form-control" id="title" aria-describedby="titleHelp" placeholder="Enter title">
+  @include('partials.error-message', ['field' => 'title'])
+</div>
+
+<div class="form-group">
+ <label for="genre">Genre</label>
+ <input type="text" name="genre" class="form-control" id="genre" aria-describedby="genreHelp" placeholder="Enter genre">
+ @include('partials.error-message', ['field' => 'genre'])
+</div>
+
+<div class="form-group">
+ <label for="director">Director</label>
+ <input type="text" name="director" class="form-control" id="director" aria-describedby="directorHelp" placeholder="Enter director">
+ @include('partials.error-message', ['field' => 'director'])
+</div>
+
+<div class="form-group">
+ <label for="year">Year</label>
+ <input type="integer" name="year" class="form-control" id="year" aria-describedby="yearHelp" placeholder="Enter year">
+ @include('partials.error-message', ['field' => 'year'])
+</div>
+
+ <div class="form-group">
+  <label for="storyline">Storyline</label>
+  <textarea class="form-control" name="storyline" id="storyline" rows="3"></textarea>
+  @include('partials.error-message', ['field' => 'storyline'])
 </div>
 
  

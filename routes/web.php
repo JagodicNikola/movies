@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MoviesController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Requests\CreateMovieRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,4 @@ Route::get('/', function () {
 Route::get('/movies', [MoviesController::class, 'index']);
 Route::get('/movies/{movie}', [MoviesController::class, 'show']);
 Route::get('/create', [MoviesController::class, 'create']);
+Route::post('/create', [MoviesController::class, 'store']);
